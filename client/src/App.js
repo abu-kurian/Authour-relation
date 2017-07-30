@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PersonAPI from './apis/PersonAPI'
 
 class App extends Component {
+
+  componentDidMount() {
+    PersonAPI.getConnections("Joseph Cook")
+    .then((result)=>{
+      console.log(JSON.stringify(result));
+    })
+    .catch(()=>{})
+  }
+
+
   render() {
     return (
       <div className="App">
