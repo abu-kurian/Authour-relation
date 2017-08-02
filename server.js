@@ -72,9 +72,8 @@ function createMyJson(data){
 }
 
 app.get('/person', (req, res) => {
-  console.log(req.query.name);
   session
-    .run('match(n) where n.name="Frank Cater" RETURN n.name,n.level1,n.level2,n.level3,n.level4,n.level5')
+    .run(`match(n) where n.name='${req.query.name}' RETURN n.name,n.level1,n.level2,n.level3,n.level4,n.level5`)
     .then(function(result){
       const singleRecord = result.records[0];
       res.json(createMyJson(singleRecord._fields));

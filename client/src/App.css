@@ -2,23 +2,30 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+body {
+  background-color: black;
+  background-image: url("https://wallpaperscraft.com/image/guardians_of_the_galaxy_raccoon_rocket_98783_1920x1200.jpg");
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+input{
+  width: 75%;
+  margin-top: 216px;
+  height: 41px;
+  font-size: 30px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.searchButton{
+  height: 41px;
+  font-size: 30px;
+  margin-left: 15px;
+}
+
+h1{
+  width: 100%;
+  background-color: white;
+  height: 70px;
+  color: #444;
+  text-align: center;
+  text-indent: inherit;
 }
