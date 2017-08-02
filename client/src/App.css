@@ -4,8 +4,10 @@
 
 body {
   background-color: black;
-  background-image: url("https://wallpaperscraft.com/image/guardians_of_the_galaxy_raccoon_rocket_98783_1920x1200.jpg");
+  background-image: url("http://xinature.com/wp-content/uploads/2016/08/forests-tree-forest-sky-trees-wallpaper-hd.jpg");
   color: white;
+  background-repeat:   no-repeat;
+  background-size:     cover;
 }
 
 input{
@@ -13,6 +15,7 @@ input{
   margin-top: 216px;
   height: 41px;
   font-size: 30px;
+  padding-left: 5px;
 }
 
 .searchButton{
@@ -25,6 +28,7 @@ h1{
   width: 100%;
   background-color: white;
   height: 70px;
+  font-size: 50px;
   color: #444;
   text-align: center;
   text-indent: inherit;

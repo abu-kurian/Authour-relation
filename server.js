@@ -21,7 +21,7 @@ function createMyJson(data){
   let nodes = [];
   let edges = [];
   var newEdge;
-  let newNode = {id:1, label:data[0], color: '#e04141'};
+  let newNode = {id:1, label:data[0], color: '#D2EF1A'};
   nodes.push(newNode);
   let data2= JSON.parse(data[2]);
   data2.map(function(connection) {
@@ -29,14 +29,14 @@ function createMyJson(data){
       let teacherId = count ++;
       let teachersTeacher = connection[teacher];
       if(teacher!=''){
-      newNode = {id: teacherId, label: teacher, color: '#e04555'}
+      newNode = {id: teacherId, label: teacher, color: '#00FE32'}
       newEdge = {from: 1, to: teacherId, label:"teacher"}
       nodes.push(newNode);
       edges.push(newEdge);
       teachersTeacher.map(function(newTeacher){
         let seniorTeacherId = count ++;
         if(newTeacher!=''){
-          newNode = {id: seniorTeacherId, label: newTeacher, color: '#271000'}
+          newNode = {id: seniorTeacherId, label: newTeacher, color: '#00E7FE'}
           newEdge = {from: teacherId, to: seniorTeacherId, label:"teacher"}
           nodes.push(newNode);
           edges.push(newEdge);
@@ -52,14 +52,14 @@ function createMyJson(data){
       let studentid = count ++;
       let studentsStudent = connection[student];
       if(student!=''){
-      newNode = {id: studentid, label: student, color: '#e04555'}
+      newNode = {id: studentid, label: student, color: '#D2EF1A'}
       newEdge = {from: 1, to: studentid, label:"student"}
       nodes.push(newNode);
       edges.push(newEdge);
       studentsStudent.map(function(newStudent){
         let babyStudentId = count ++;
         if(newStudent!=''){
-          newNode = {id: babyStudentId, label: newStudent, color: '#271000'}
+          newNode = {id: babyStudentId, label: newStudent, color: '#00E7FE'}
           newEdge = {from: studentid, to: babyStudentId, label:"student"}
           nodes.push(newNode);
           edges.push(newEdge);
