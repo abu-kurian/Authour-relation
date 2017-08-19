@@ -4,8 +4,7 @@
 
 body {
   background-color: black;
-  background-image: url("http://xinature.com/wp-content/uploads/2016/08/forests-tree-forest-sky-trees-wallpaper-hd.jpg");
-  color: white;
+  background-image: url("https://ak3.picdn.net/shutterstock/videos/13686014/thumb/12.jpg");
   background-repeat:   no-repeat;
   background-size:     cover;
 }
@@ -18,11 +17,132 @@ input{
   padding-left: 5px;
 }
 
-.searchButton{
-  height: 41px;
-  font-size: 30px;
-  margin-left: 15px;
+.LegendBorder{
+  float: right;
+  margin: 0 0 10px 10px;
+  border-style: solid;
 }
+
+
+.LEGEND{
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.rightsReserved{
+  text-align: center;
+  padding-top: 350px;
+  color: #F0F8FF;
+}
+
+.AuthourLegend{
+  color: #808000;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.Level2Legend{
+  color: #00E7FE;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.Level1Legend{
+  color: #00FE32;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+.searchButton{
+  	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+  	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+  	background-color:#768d87;
+  	-moz-border-radius:5px;
+  	-webkit-border-radius:5px;
+  	border-radius:5px;
+  	border:1px solid #566963;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:11px 23px;
+  	text-decoration:none;
+  	text-shadow:0px -1px 0px #2b665e;
+  }
+.searchButton {
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+  	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+  	background-color:#6c7c7c;
+  }
+.searchButton:active {
+  	position:relative;
+  	top:1px;
+    margin-top: 10px;
+  }
+
+
+
+.getDataButton{
+  	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+  	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+  	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+  	background-color:#768d87;
+  	-moz-border-radius:5px;
+  	-webkit-border-radius:5px;
+  	border-radius:5px;
+  	border:1px solid #566963;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:15px;
+  	font-weight:bold;
+  	padding:11px 23px;
+  	text-decoration:none;
+  	text-shadow:0px -1px 0px #2b665e;
+  }
+.getDataButton {
+  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+  	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+  	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+  	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+  	background-color:#6c7c7c;
+  }
+.searchButton:active {
+  	position:relative;
+  	top:1px;
+    margin-top: 10px;
+  }
 
 h1{
   width: 100%;
