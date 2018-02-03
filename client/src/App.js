@@ -102,11 +102,20 @@ class App extends Component {
       //var country = result.country;
       //var thesis = result.thesis;
       //var institute = result.institute;
-      console.log(result.country);
+      // console.log(result.country);
+      console.log("HERE");
+      console.log(result);
       let authourData = {
-        country: result.country,
-        thesis: result.thesis,
-        institute: result.insitute
+        // country: result.country,
+        // thesis: result.thesis,
+        // institute: result.insitute
+        domain : result.domain,
+        totalCitation : result.totalCitations,
+        communityCitation : result.communityCitation,
+        genelogicalCitation : result.genelogicalCitation,
+        selfCitation : result.selfCitation,
+        hIndex : result.hIndex,
+        i10 : result.i10
       };
       this.setState({author: authourData});
       this.setState({modalOpen: true});
@@ -147,16 +156,32 @@ class App extends Component {
           <span>{this.state.name}</span>
           </p>
           <p>
-          <span><b>Thesis: </b></span>
-          <span>{this.state.author.thesis}</span>
+          <span><b>Domain: </b></span>
+          <span>{this.state.author.domain}</span>
           </p>
           <p>
-          <span><b>Country: </b></span>
-          <span>{this.state.author.country}</span>
+          <span><b>Total Citations: </b></span>
+          <span>{this.state.author.totalCitations}</span>
           </p>
           <p>
-          <span><b>Institute: </b></span>
-          <span>{this.state.author.institute}</span>
+          <span><b>Self Citation: </b></span>
+          <span>{this.state.author.selfCitation}</span>
+          </p>
+          <p>
+          <span><b>Genelogical Citation: </b></span>
+          <span>{this.state.author.genelogicalCitation}</span>
+          </p>
+          <p>
+          <span><b>Community Citation: </b></span>
+          <span>{this.state.author.communityCitation}</span>
+          </p>
+          <p>
+          <span><b>H-Index: </b></span>
+          <span>{this.state.author.hIndex}</span>
+          </p>
+          <p>
+          <span><b>i10 Score: </b></span>
+          <span>{this.state.author.i10}</span>
           </p>
         </div>
       );
