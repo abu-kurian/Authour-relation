@@ -103,8 +103,8 @@ class App extends Component {
       //var thesis = result.thesis;
       //var institute = result.institute;
       // console.log(result.country);
-      console.log("HERE");
-      console.log(result);
+      // console.log("HERE");
+      // console.log(result);
       let authourData = {
         // country: result.country,
         // thesis: result.thesis,

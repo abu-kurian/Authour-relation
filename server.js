@@ -3,8 +3,10 @@ const express = require('express');
 const fs = require('fs');
 var neo4j = require('neo4j-driver').v1;
 var request = require("request");
+var cors = require("cors");
 
 const app = express();
+app.use(cors());
 
 app.set('port', (process.env.PORT || 3001));
 

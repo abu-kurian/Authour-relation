@@ -1,9 +1,13 @@
 class HttpWrapper {
   static sendRequest(url, config) {
+    // var headers = new Headers({
+    //   'Content-Type': 'json'
+    // });
     console.log("sendRequest");
-    return fetch(url, config)
+    // console.log(url);
+    return fetch(url)
       .then((result) => {
-        console.log("RESULT : " + JSON.stringify(result));
+        // console.log("RESULT : " + JSON.stringify(result));
         if (result.ok) return result.json();
         else {
           throw new Error();
@@ -13,9 +17,7 @@ class HttpWrapper {
 
   static get(url) {
     console.log("get");
-    return HttpWrapper.sendRequest(url, {
-      mode : 'no-cors'
-    });
+    return HttpWrapper.sendRequest(url);
   }
 }
 
