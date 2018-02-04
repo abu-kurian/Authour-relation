@@ -82,7 +82,7 @@ class App extends Component {
   }
 
   __getConnections(){
-    PersonAPI.getConnections(this.state.name)
+    PersonAPI.getGraph(this.state.name)
     .then((result)=>{
       let graphLocal = {
         nodes: result.nodes,
@@ -130,20 +130,6 @@ class App extends Component {
     if(this.state.modalType==="GraphModal"){
       return(
       <div>
-        <div className="LegendBorder">
-          <div className="LEGEND">
-            <span><u>Legend</u></span>
-          </div>
-          <div className="AuthourLegend">
-            <span>Referenced author</span>
-          </div>
-          <div className="Level1Legend">
-            <span>Level 1</span>
-          </div>
-          <div className="Level2Legend">
-            <span>Level 2</span>
-          </div>
-        </div>
         <Graph graph={this.state.graph} options={options} events={events} />
       </div>);
     }
