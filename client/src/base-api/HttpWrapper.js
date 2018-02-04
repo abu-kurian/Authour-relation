@@ -3,7 +3,7 @@ class HttpWrapper {
     console.log("sendRequest");
     return fetch(url, config)
       .then((result) => {
-        console.log("RESULT : " + result);
+        console.log("RESULT : " + JSON.stringify(result));
         if (result.ok) return result.json();
         else {
           throw new Error();
