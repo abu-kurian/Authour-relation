@@ -13,7 +13,9 @@ class HttpWrapper {
 
   static get(url) {
     console.log("get");
-    return HttpWrapper.sendRequest(url);
+    return HttpWrapper.sendRequest(url, {
+      mode : 'no-cors'
+    });
   }
 }
 
