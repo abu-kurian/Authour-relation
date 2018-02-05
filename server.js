@@ -119,7 +119,9 @@ app.get('/person', (req, res) => {
             "statement": query
         }]
     };
-    var neo = request({
+
+    try{
+      var neo = request({
         url: NEO4J_API_URL,
         method: "POST",
         json: request_json,
@@ -127,20 +129,25 @@ app.get('/person', (req, res) => {
             "Authorization": "Basic " + auth_payload,
             "Accept": "application/json; charset=UTF-8"
         }
-    }, function(err, response, body) {
-        if (!err && response.statusCode === 200) {
-            console.log("BODY : " + JSON.stringify(body));
-            const singleRecord = body.results[0].data[0].row;
-            console.log("Single Record : " + singleRecord);
-            var t = createMyJson(singleRecord);
-            console.log("T : ", t);
-            res.json(t);
-        } else {
-            console.log("API request failed with error: " + err);
-            console.log("response.statusCode: " + response.statusCode);
-            console.log("response.statusText: " + response.statusText);
-        }
-    }); // request ends
+      }, function(err, response, body) {
+          if (!err && response.statusCode === 200) {
+              console.log("BODY : " + JSON.stringify(body));
+              const singleRecord = body.results[0].data[0].row;
+              console.log("Single Record : " + singleRecord);
+              var t = createMyJson(singleRecord);
+              console.log("T : ", t);
+              res.json(t);
+          } else {
+              console.log("API request failed with error: " + err);
+              console.log("response.statusCode: " + response.statusCode);
+              console.log("response.statusText: " + response.statusText);
+          }
+      }); // request ends
+    }catch(e){
+      console.log(e);
+      res.json({});
+    }
+    
 
 });
 
@@ -157,52 +164,59 @@ app.get('/graph', (req, res) =>{
             "statement":  queryHopUp
         }]
     };
-    var neo = request({
-        url: NEO4J_API_URL,
-        method: "POST",
-        json: request_json,
-        headers: {
-            "Authorization": "Basic " + auth_payload,
-            "Accept": "application/json; charset=UTF-8"
-        }
-    }, function(err, response, body) {
-        if (!err && response.statusCode === 200) {
-            console.log("BODY : " + JSON.stringify(body));
-            var dataDown = body.results[0].data;
-            var dataUp = body.results[1].data;
-            var authArray = [];
-            var nodes = [];
-            var edges = [];
-            nodes.push({
-              id : req.query.name,
-              label : req.query.name,
-              color: '#0000ff'
-            });
-            for(var i = 0; i<dataDown.length; i++){
-              newNode = {id: dataDown[i].row[0], label: dataDown[i].row[0], color: '#00E7FE'}
-              newEdge = {from: req.query.name, to: dataDown[i].row[0], label:"student"}
-              nodes.push(newNode);
-              edges.push(newEdge);
-              // console.log(data[i].row[0]);
-            }
-            for(var i = 0; i<dataUp.length; i++){
-              newNode = {id: dataUp[i].row[0], label: dataUp[i].row[0], color: '#aa4400'}
-              newEdge = {from: dataUp[i].row[0], to: req.query.name, label:"student"}
-              nodes.push(newNode);
-              edges.push(newEdge);
-              // console.log(data[i].row[0]);
-            }
-            var t = {nodes, edges};
-            // console.log(t)
 
-            console.log("T : ", t);
-            res.json(t);
-        } else {
-            console.log("API request failed with error: " + err);
-            console.log("response.statusCode: " + response.statusCode);
-            console.log("response.statusText: " + response.statusText);
-        }
-    }); // request ends
+    try{
+
+      var neo = request({
+          url: NEO4J_API_URL,
+          method: "POST",
+          json: request_json,
+          headers: {
+              "Authorization": "Basic " + auth_payload,
+              "Accept": "application/json; charset=UTF-8"
+          }
+      }, function(err, response, body) {
+          if (!err && response.statusCode === 200) {
+              console.log("BODY : " + JSON.stringify(body));
+              var dataDown = body.results[0].data;
+              var dataUp = body.results[1].data;
+              var authArray = [];
+              var nodes = [];
+              var edges = [];
+              nodes.push({
+                id : req.query.name,
+                label : req.query.name,
+                color: '#0000ff'
+              });
+              for(var i = 0; i<dataDown.length; i++){
+                newNode = {id: dataDown[i].row[0], label: dataDown[i].row[0], color: '#00E7FE'}
+                newEdge = {from: req.query.name, to: dataDown[i].row[0], label:"student"}
+                nodes.push(newNode);
+                edges.push(newEdge);
+                // console.log(data[i].row[0]);
+              }
+              for(var i = 0; i<dataUp.length; i++){
+                newNode = {id: dataUp[i].row[0], label: dataUp[i].row[0], color: '#aa4400'}
+                newEdge = {from: dataUp[i].row[0], to: req.query.name, label:"student"}
+                nodes.push(newNode);
+                edges.push(newEdge);
+                // console.log(data[i].row[0]);
+              }
+              var t = {nodes, edges};
+              // console.log(t)
+
+              console.log("T : ", t);
+              res.json(t);
+          } else {
+              console.log("API request failed with error: " + err);
+              console.log("response.statusCode: " + response.statusCode);
+              console.log("response.statusText: " + response.statusText);
+          }
+      }); // request ends
+    }catch(e){
+      console.log(e);
+      res.json({});
+    }
 });
 
 app.listen(app.get('port'), () => {
