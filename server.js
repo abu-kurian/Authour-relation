@@ -132,6 +132,11 @@ app.get('/person', (req, res) => {
       }, function(err, response, body) {
           if (!err && response.statusCode === 200) {
               console.log("BODY : " + JSON.stringify(body));
+              if((body.results[0].data).length == 0){
+                console.log("Wrong name");
+                res.json({});
+                return;
+              }
               const singleRecord = body.results[0].data[0].row;
               console.log("Single Record : " + singleRecord);
               var t = createMyJson(singleRecord);
